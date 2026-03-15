@@ -230,8 +230,7 @@ static int contr_probe(struct i2c_client* client)
 	indev->id.product = 0x0001;
 	indev->id.version = 1;
 
-set_bit(BTN_GAMEPAD, indev->keybit);
-
+	set_bit(BTN_GAMEPAD, indev->keybit);
     set_bit(EV_KEY, indev->evbit);
     set_bit(EV_ABS, indev->evbit);
     set_bit(INPUT_PROP_BUTTONPAD, indev->propbit);
