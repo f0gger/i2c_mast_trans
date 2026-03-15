@@ -226,6 +226,11 @@ static int contr_probe(struct i2c_client* client)
     }
     indev->name = "Snes Input";
     indev->id.bustype = BUS_I2C;
+	indev->id.vendor  = 0x1234;
+	indev->id.product = 0x0001;
+	indev->id.version = 1;
+
+set_bit(BTN_GAMEPAD, indev->keybit);
 
     set_bit(EV_KEY, indev->evbit);
     set_bit(EV_ABS, indev->evbit);
