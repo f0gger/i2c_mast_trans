@@ -8,7 +8,7 @@ The project consists of two components that communicate over I²C: an ATmega328P
 | File | Platform | Description |
 |---|---|---|
 | `slaveTrans.c` | ATmega328P | I²C slave firmware that reads controller inputs and sends their state to the master. |
-| `masterRecv.c` | ROCK64 / Lakka Linux | Linux kernel module that reads controller state over I²C and registers a Linux input device. |
+| `i2c0-master.c` | ROCK64 / Lakka Linux | Linux kernel module that reads controller state over I²C and registers a Linux input device. |
 | `Makefile` | ROCK64 / Linux kernel build environment | Builds the Linux kernel module using the configured kernel source tree and AArch64 cross-compiler. |
 
 ## System Architecture
@@ -22,7 +22,7 @@ The project consists of two components that communicate over I²C: an ATmega328P
               | Address: 0x20
               v
           ROCK64
-       (masterRecv.c)
+       (i2c0-master.c)
               |
               v
       Linux Input Subsystem
