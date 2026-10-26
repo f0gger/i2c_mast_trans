@@ -3,7 +3,7 @@ obj-m += i2c0-master.o
 ARCH := arm64
 CROSS_COMPILE := aarch64-linux-gnu-
 
-KERN := /home/fog/linux
+KERN ?= $(HOME)/linux
 PWD := $(CURDIR)
 
 
